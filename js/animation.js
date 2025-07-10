@@ -12,10 +12,10 @@ const tlBtn = document.querySelector("#grid__tl__btn");
 // const blBtn = document.querySelector("#grid__bl__btn");
 // const brBtn = document.querySelector("#grid__br__btn");
 
-const tlContent = document.querySelector("#grid__tl__Content");
-// const trContent = document.querySelector("#grid__tr__Content");
-// const blContent = document.querySelector("#grid__bl__Content");
-// const brContent = document.querySelector("#grid__br__Content");
+const tlContent = document.querySelector("#grid__tl__content");
+// const trContent = document.querySelector("#grid__tr__content");
+// const blContent = document.querySelector("#grid__bl__content");
+// const brContent = document.querySelector("#grid__br__content");
 
 // const projectOne = document.querySelector(".p-1");
 // const projectTwo = document.querySelector(".p-2");
@@ -86,7 +86,7 @@ function playAnimation(animation, reverseAnimation){
 
 // ON CLICK CORNER BUTTON FUNCTIONS
 
-tlBtn.onClick = function () {
+tlBtn.onclick = function () {
     if (activeCorner == "top-left"){
         // playClosingAnimation("reverse-animate-top-left");
     } else {
@@ -121,7 +121,7 @@ tlBtn.onClick = function () {
     }
 };
 
-// trBtn.onClick = function () {
+// trBtn.onclick = function () {
 //     if (activeCorner == "top-right"){
 //         playClosingAnimation("reverse-animate-top-right");
 //     } else {
@@ -156,7 +156,7 @@ tlBtn.onClick = function () {
 //     }
 // };
 
-// brBtn.onClick = function () {
+// brBtn.onclick = function () {
 //     if (activeCorner == "bottom-right"){
 //         playClosingAnimation("reverse-animate-bottom-right");
 //     } else {
@@ -191,7 +191,7 @@ tlBtn.onClick = function () {
 //     }
 // };
 
-// blBtn.onClick = function () {
+// blBtn.onclick = function () {
 //     if (activeCorner == "bottom-left"){
 //         playClosingAnimation("reverse-animate-bottom-left");
 //     } else {
