@@ -46,13 +46,46 @@ let activeCorner = "";
 
 // ADD EVENT LISTENER TO WINDOW OBJECT TO LISTEN FOR RESIZE EVENTS
 
-//window.addEventListener("resize", handleWindowResize);
+window.addEventListener("resize", handleWindowResize);
 
 // FUNCTION THAT HANDLES STYLING WHEN RISIZING WINDOW
 
-// function handleWindowResize() {
-
-// }
+function handleWindowResize() {
+    switch (activeCorner) {
+        case "top-left":
+            if (window.innerWidth <= 1100){
+                tlActive = "translateX(0) translateY(0)";
+                tlContent.style.transform = "translateX(0) translateY(0)";
+                tlContent.style.width = "100vw";
+                tlContent.style.height = "100vh";
+                tlContent.style.top = "0";
+                tlContent.style.display = "flex";
+                tlContent.style.alignItems = "center";
+                tlContent.style.justifyContent = "center";
+                tlContent.style.background = "var(--bg-transparent)";
+                tlContent.style.zIndex = "200";
+                tlBtn.style.zIndex = "300";
+                // trBtn.style.zIndex = "100";
+                // blBtn.style.zIndex = "100";
+                // brBtn.style.zIndex = "100";
+            } else {
+                tlActive = "translateX(5vw) translateY(0)";
+                tlContent.style.transform = "translateX(5vw) translateY(0)";
+                tlContent.style.width = "30vw";
+                tlContent.style.height = "0";
+                tlContent.style.top = "10vh";
+                tlContent.style.display = "block";
+            }
+            break;
+        case "top-right":
+            break;
+        case "bottom-left":
+            break;
+        case "bottom-right":
+            break;
+        default:
+    }
+}
 
 // STORE LAST REVERSE ANIMATION, READY TO BE PLAYED
 
@@ -80,15 +113,51 @@ function playAnimation(animation, reverseAnimation){
     }
 }
 
-// function playClosingAnimation(reverseAnimation){
+function playClosingAnimation(reverseAnimation){
+    tlBtn.innerHTML = "About";
+    // trBtn.innerHTML = "Experience";
+    // blBtn.innerHTML = "Projects";
+    // brBtn.innerHTML = "Contact";
 
-// }
+    switch (activeCorner) {
+        case "top-left":
+            tlBtn.style.background = bgColour;
+            tlBtn.style.color = textColour;
+            tlContent.style.transform = tlHidden;
+            break;
+        // case "top-right":
+        //     tlBtn.style.background = bgColour;
+        //     tlBtn.style.color = textColour;
+        //     tlContent.style.transform = tlHidden;
+        //     break;
+        // case "bottom-left":
+        //     tlBtn.style.background = bgColour;
+        //     tlBtn.style.color = textColour;
+        //     tlContent.style.transform = tlHidden;
+        //     break;
+        // case "bottom-right":
+        //     tlBtn.style.background = bgColour;
+        //     tlBtn.style.color = textColour;
+        //     tlContent.style.transform = tlHidden;
+        //     break;
+        default:
+    }
+
+    heroImage.className = "";
+    lastReverseAnimation = "";
+    activeCorner = "";
+    heroImage.classList.add(reverseAnimation);
+
+    setTimeout(function () {
+        heroImage.classList.remove(reverseAnimation);
+    }, 200);
+}
 
 // ON CLICK CORNER BUTTON FUNCTIONS
 
 tlBtn.onclick = function () {
     if (activeCorner == "top-left"){
-        // playClosingAnimation("reverse-animate-top-left");
+        playClosingAnimation("reverse-animate-top-left");
     } else {
         // trBtn.innerHTML = "Experience";
         // blBtn.innerHTML = "Projects";
@@ -98,7 +167,7 @@ tlBtn.onclick = function () {
         activeCorner = "top-left";
         tlBtn.innerHTML = "&uarr;<br/>About";
 
-        //handleWindowResize();
+        handleWindowResize();
         playAnimation("animate-top-left", "reverse-animate-top-left");
 
         // Change background colours
