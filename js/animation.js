@@ -3,17 +3,17 @@
 const heroImage = document.querySelector("#hero__animation__img");
 
 const tl = document.querySelector("#grid__tl");
-// const tr = document.querySelector("#grid__tr");
+const tr = document.querySelector("#grid__tr");
 // const bl = document.querySelector("#grid__bl");
 // const br = document.querySelector("#grid__br");
 
 const tlBtn = document.querySelector("#grid__tl__btn");
-// const trBtn = document.querySelector("#grid__tr__btn");
+const trBtn = document.querySelector("#grid__tr__btn");
 // const blBtn = document.querySelector("#grid__bl__btn");
 // const brBtn = document.querySelector("#grid__br__btn");
 
 const tlContent = document.querySelector("#grid__tl__content");
-// const trContent = document.querySelector("#grid__tr__content");
+const trContent = document.querySelector("#grid__tr__content");
 // const blContent = document.querySelector("#grid__bl__content");
 // const brContent = document.querySelector("#grid__br__content");
 
@@ -65,7 +65,7 @@ function handleWindowResize() {
                 tlContent.style.background = "var(--bg-transparent)";
                 tlContent.style.zIndex = "200";
                 tlBtn.style.zIndex = "300";
-                // trBtn.style.zIndex = "100";
+                trBtn.style.zIndex = "100";
                 // blBtn.style.zIndex = "100";
                 // brBtn.style.zIndex = "100";
             } else {
@@ -78,6 +78,29 @@ function handleWindowResize() {
             }
             break;
         case "top-right":
+            if (window.innerWidth <= 1100){
+                trActive = "translateX(0) translateY(0)";
+                trContent.style.transform = "translateX(0vw) translateY(0)";
+                trContent.style.width = "100vw";
+                trContent.style.height = "100vh";
+                trContent.style.top = "0";
+                trContent.style.display = "flex";
+                trContent.style.alignItems = "center";
+                trContent.style.justifyContent = "center";
+                trContent.style.background = "var(--bg-transparent)";
+                trContent.style.zIndex = "200";
+                trBtn.style.zIndex = "300";
+                tlBtn.style.zIndex = "100";
+                // blBtn.style.zIndex = "100";
+                // brBtn.style.zIndex = "100";
+            } else {
+                trActive = "translateX(-5vw) translateY(0)";
+                trContent.style.transform = "translateX(-5vw) translateY(0)";
+                trContent.style.width = "30vw";
+                trContent.style.height = "0";
+                trContent.style.top = "10vh";
+                trContent.style.display = "block";
+            }
             break;
         case "bottom-left":
             break;
@@ -115,7 +138,7 @@ function playAnimation(animation, reverseAnimation){
 
 function playClosingAnimation(reverseAnimation){
     tlBtn.innerHTML = "About";
-    // trBtn.innerHTML = "Experience";
+    trBtn.innerHTML = "Experience";
     // blBtn.innerHTML = "Projects";
     // brBtn.innerHTML = "Contact";
 
@@ -125,11 +148,11 @@ function playClosingAnimation(reverseAnimation){
             tlBtn.style.color = textColour;
             tlContent.style.transform = tlHidden;
             break;
-        // case "top-right":
-        //     tlBtn.style.background = bgColour;
-        //     tlBtn.style.color = textColour;
-        //     tlContent.style.transform = tlHidden;
-        //     break;
+        case "top-right":
+            trBtn.style.background = bgColour;
+            trBtn.style.color = textColour;
+            trContent.style.transform = trHidden;
+            break;
         // case "bottom-left":
         //     tlBtn.style.background = bgColour;
         //     tlBtn.style.color = textColour;
@@ -159,7 +182,7 @@ tlBtn.onclick = function () {
     if (activeCorner == "top-left"){
         playClosingAnimation("reverse-animate-top-left");
     } else {
-        // trBtn.innerHTML = "Experience";
+        trBtn.innerHTML = "Experience";
         // blBtn.innerHTML = "Projects";
         // brBtn.innerHTML = "Contact";
 
@@ -171,59 +194,59 @@ tlBtn.onclick = function () {
         playAnimation("animate-top-left", "reverse-animate-top-left");
 
         // Change background colours
-        // trBtn.style.background = bgColour;
+        trBtn.style.background = bgColour;
         // brBtn.style.background = bgColour;
         // blBtn.style.background = bgColour;
         tlBtn.style.background = bgColourAlt;
 
         // Change text colours
-        // trBtn.style.color = textColour;
+        trBtn.style.color = textColour;
         // brBtn.style.color = textColour;
         // blBtn.style.color = textColour;
         tlBtn.style.color = textColourAlt;
 
         // Change positions of the corner content
-        // trContent.style.transform = trHidden;
+        trContent.style.transform = trHidden;
         // brContent.style.transform = brHidden;
         // blContent.style.transform = blHidden;
         tlContent.style.transform = tlActive;
     }
 };
 
-// trBtn.onclick = function () {
-//     if (activeCorner == "top-right"){
-//         playClosingAnimation("reverse-animate-top-right");
-//     } else {
-//         tlBtn.innerHTML = "About";
-//         blBtn.innerHTML = "Projects";
-//         brBtn.innerHTML = "Contact";
+trBtn.onclick = function () {
+    if (activeCorner == "top-right"){
+        playClosingAnimation("reverse-animate-top-right");
+    } else {
+        tlBtn.innerHTML = "About";
+        //blBtn.innerHTML = "Projects";
+        //brBtn.innerHTML = "Contact";
 
-//         // Setting activeCorner
-//         activeCorner = "top-right";
-//         trBtn.innerHTML = "&uarr;<br/>Experience";
+        // Setting activeCorner
+        activeCorner = "top-right";
+        trBtn.innerHTML = "&uarr;<br/>Experience";
 
-//         handleWindowResize();
-//         playAnimation("animate-top-right", "reverse-animate-top-right");
+        handleWindowResize();
+        playAnimation("animate-top-right", "reverse-animate-top-right");
 
-//         // Change background colours
-//         trBtn.style.background = bgColourAlt;
-//         brBtn.style.background = bgColour;
-//         blBtn.style.background = bgColour;
-//         tlBtn.style.background = bgColour;
+        // Change background colours
+        trBtn.style.background = bgColourAlt;
+        //brBtn.style.background = bgColour;
+        //blBtn.style.background = bgColour;
+        tlBtn.style.background = bgColour;
 
-//         // Change text colours
-//         trBtn.style.color = textColourAlt;
-//         brBtn.style.color = textColour;
-//         blBtn.style.color = textColour;
-//         tlBtn.style.color = textColour;
+        // Change text colours
+        trBtn.style.color = textColourAlt;
+        //brBtn.style.color = textColour;
+        //blBtn.style.color = textColour;
+        tlBtn.style.color = textColour;
 
-//         // Change positions of the corner content
-//         trContent.style.transform = trActive;
-//         brContent.style.transform = brHidden;
-//         blContent.style.transform = blHidden;
-//         tlContent.style.transform = tlHidden;
-//     }
-// };
+        // Change positions of the corner content
+        trContent.style.transform = trActive;
+        //brContent.style.transform = brHidden;
+        //blContent.style.transform = blHidden;
+        tlContent.style.transform = tlHidden;
+    }
+};
 
 // brBtn.onclick = function () {
 //     if (activeCorner == "bottom-right"){
