@@ -17,10 +17,8 @@ function showProject(num) {
     // For loop to hide all the projects
     for (let i = 0; i < project.length; i++){
         project[i].style.display = "none";
-        project[i].style.width = "";
     }
-    project[slideIndex - 1].style.display ="flex";
-    project[slideIndex - 1].style.width = "100%";
+    project[slideIndex - 1].style.display = "flex";
 }
 
 function navigateProject(num) {

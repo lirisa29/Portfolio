@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    padding: 2rem 1rem; /* less horizontal padding */
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--text);
+}
+
+.back-btn {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.project-details {
+    text-align: center;
+}
+
+.project-details h1 {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.project-details h2 {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+}
+
+.project-details p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
+.details-poster {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 1rem;
+}
+
+.tech-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.tech-icons img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.process-gallery {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.process-gallery img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 0.5rem;
+}
+
+.download-btn {
+    display: block;
+    text-align: center;
+    background: var(--btn);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--btn-text);
+    font-weight: 600;
+    margin: 3rem auto 3rem auto;
+    text-decoration: none;
+    border: var(--border);
+    transition: 0.2s ease;
+}
+
+.download-btn:hover {
+    opacity: 0.8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+   ============================ */
+
+/* Large screens (default above 1024px) are already fine */
+
+/* Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+
+    body {
+        padding: 1.5rem;
+        max-width: 900px;
+    }
+
+    .details-poster {
+        width: 70%;
+    }
+
+    .process-gallery img {
+        width: 45%;
+    }
+}
+
+/* Mobile screens (up to 768px) */
+@media (max-width: 768px) {
+
+    body {
+        padding: 1.2rem;
+        max-width: 100%;
+    }
+
+    .details-poster {
+        width: 90%;
+    }
+
+    .project-details h2 {
+        font-size: 1.4rem;
+    }
+
+    .project-details p {
+        font-size: 0.95rem;
+    }
+
+    .tech-icons img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .process-gallery img {
+        width: 80%;   /* Stack images vertically */
+    }
+}
+
+/* Small mobile (up to 480px) */
+@media (max-width: 480px) {
+
+    body {
+        padding: 1rem;
+    }
+
+    .project-details h2 {
+        font-size: 1.2rem;
+    }
+
+    .details-poster {
+        width: 100%;
+    }
+
+    .process-gallery img {
+        width: 100%;
+    }
+
+    .download-btn {
+        width: 100%;
+    }
+}

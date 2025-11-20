@@ -260,6 +260,13 @@ article p {
   background: var(--bg-alt);
 }
 
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .project {
+    width: 100%;
+  }
+}
+
 .project__img {
   width: 100%;
 }

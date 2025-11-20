@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lirisa Govender Portfolio</title>
+    <link rel="icon" type="image/x-icon"  href="/assets/icons/favicon.ico">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/colour-mode.css">
+    <link rel="stylesheet" href="../css/project-details.css">
+</head>
+
+<body>
+
+    <!-- Back Button -->
+    <a href="../index.html" class="back-btn">← Back to Portfolio</a>
+
+    <section class="project-details">
+
+        <!-- Poster Image -->
+        <img 
+            src="../assets/portfolio-projects/project-2-dark.png" 
+            alt="Project Two Poster"
+            class="details-poster"
+        />
+
+        <!-- Title -->
+        <h1>Project 2 Details</h1>
+
+        <!-- Synopsis -->
+        <h2>Synopsis</h2>
+        <p>
+            Cyro Crisis places you aboard a malfunctioning spaceship overrun by deadly mutants, forcing you to fight for survival as a lone remaining crew member. 
+            Armed with a range of sci-fi weapons, you’ll navigate dimly lit corridors, secure compromised areas, and battle back the spreading infestation before it’s too late. 
+            Blending tense atmosphere with fast-paced combat, the game delivers a high-stakes sci-fi shooter experience as you struggle to contain the crisis threatening the entire ship.
+        </p>
+
+        <!-- Project Brief -->
+        <h2>Project Brief</h2>
+        <p>
+            This project required building a single-player first-person deathmatch shooter in Unreal Engine, modeled after classic arena shooters like Quake 3 Arena, with a strong emphasis on applying SOLID principles and programming design patterns throughout the codebase. 
+            In Part 1, the focus was on implementing player movement, two switchable firearms, and ammunition pickups. 
+            Part 2 expanded the game with AI-controlled bots capable of navigating the arena, swapping weapons, and collecting ammo and health pickups just like the player. 
+            Part 3 introduced a functional leaderboard, a title screen, and core UI elements for restarting or quitting matches, along with refactoring the existing systems using appropriate design patterns. 
+            Across all stages, clean, modular, and maintainable architecture was the primary goal.
+        </p>
+
+        <!-- My Role -->
+        <h2>My Contribution</h2>
+        <p>
+            For Cyro Crisis, I developed the entire game on my own, marking my first full project in Unreal Engine and my first time coding exclusively in C++. 
+            I created the complete environment by modeling the arena in Blender and crafting custom lighting and UI elements, while focusing primarily on building solid gameplay systems. 
+            I implemented a functional AI system from scratch—featuring enemy patrols, player detection, combat behaviour, weapon pickups, death, and respawning—which, despite some remaining challenges, taught me a great deal about Unreal’s AI tools and C++ workflow. 
+            Throughout the project, I structured the codebase around SOLID principles and design patterns, using interfaces, abstraction, and patterns like Factory, Observer, and State to keep the architecture clean, modular, and easy to extend.
+        </p>
+
+        <!-- Technologies -->
+        <h2>Technologies Used</h2>
+        <div class="tech-icons">
+            <img src="../assets/icons/unreal-engine.png" alt="Unreal Engine 5">
+            <img src="../assets/icons/cplusplus.png" alt="C++">
+            <img src="../assets/icons/rider.png" alt="Jetbrains Rider">
+            <img src="../assets/icons/blender.png" alt="Blender">
+            <img src="../assets/icons/photoshop.png" alt="Photoshop">
+            <!-- Add more if needed -->
+        </div>
+
+        <!-- Process Work -->
+        <h2>Process Work</h2>
+        <div class="process-gallery">
+            <img src="../assets/portfolio-projects/process-images/project-2-process1.png" alt="">
+            <img src="../assets/portfolio-projects/process-images/project-2-process2.png" alt="">
+            <img src="../assets/portfolio-projects/process-images/project-2-process3.png" alt="">
+        </div>
+
+        <!-- Download Link -->
+        <button
+            class="download-btn"
+            onclick="window.location.href='https://github.com/lirisa29/Cyro-Crisis.git'"
+        >
+            GitHub Repository
+        </button>
+
+    </section>
+</body>
+</html>
